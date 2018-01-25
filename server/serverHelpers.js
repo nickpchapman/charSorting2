@@ -1,5 +1,5 @@
 const helpers = {
-  sortString: (string) => {
+  sortString: string => {
     return string
       .split('')
       .sort()
@@ -8,4 +8,4 @@ const helpers = {
   }
 }
 
-module.exports = helpers
+module.exports = helpers;
