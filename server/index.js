@@ -8,11 +8,6 @@ const { sortString } = require('./serverHelpers.js');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-//Routes
-app.get('/', (req, res) => {
-  res.send('server is live!');
-});
-
 app.post('/sort', (req, res) => {
   res.send(sortString(req.body.str));
 });

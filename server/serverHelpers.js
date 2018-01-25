@@ -6,6 +6,6 @@ const helpers = {
       .reverse()
       .join('')
   }
-}
+};
 
 module.exports = helpers;
