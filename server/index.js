@@ -2,16 +2,19 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-app.use(express.static('public'))
+const bodyParser = require('body-parser');
+const { sortString } = require('./serverHelpers.js');
+
+app.use(express.static('public'));
+app.use(bodyParser.json());
 
 //Routes
 app.get('/', (req, res) => {
-  res.send('server is live!')
+  res.send('server is live!');
 });
 
 app.post('/sort', (req, res) => {
-  console.log('sort route called')
-  res.send('dummyString')
+  res.send(sortString(req.body.str));
 });
 
 app.listen(port, () => console.log(`live on port: ${port}`));
