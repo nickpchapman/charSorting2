@@ -11,7 +11,13 @@ const fetchStr = (unsortedStr, callback) => {
   });
 }
 
-const updateTable = (sortedStr) => {
-  console.log('table updated', sortedStr)
+const updateTable = (sortedStr, str) => {
+  const table = document.getElementById('table-main');
+  const row = table.insertRow(1);
+  const strCell = row.insertCell(0);
+  const sortedStrCell = row.insertCell(1);
+
+  strCell.innerHTML = str;
+  sortedStrCell.innerHTML = sortedStr;
 }
 
